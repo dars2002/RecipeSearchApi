@@ -6,11 +6,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Recipe } from '../../model/recipe.entity';
 import { RecipesearchApiService } from '../../services/recipesearch-api.service';
 import { CommonModule } from '@angular/common';
-
+import {SearchComponent} from '../search/search.component';
 @Component({
   selector: 'app-recipe-list',
   standalone: true,
-  imports: [MatCardModule, MatInputModule, MatFormFieldModule,CommonModule],
+  imports: [MatCardModule, MatInputModule, MatFormFieldModule,CommonModule, SearchComponent],
   templateUrl: './recipe-list.component.html',
   styleUrl: './recipe-list.component.css'
 })
@@ -21,13 +21,16 @@ export class RecipeListComponent {
 
   constructor(private recipesearchApiService: RecipesearchApiService) {
   }
-  applyFilter(event: Event) {
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  onSearch(query: string): void {
+      this.searchRecipes(query);
+  }
+  ngOnInit(): void {
+    this.searchRecipes('chaufa'); // Load default recipes with an empty query
   }
 
-  ngOnInit(): void {
-      this.recipesearchApiService.getRecipes().subscribe((data: any) => {
+  searchRecipes(query:string): void {
+      this.recipesearchApiService.getRecipes(query).subscribe((data: any) => {
         this.recipes = data.hits.map((hit: any) => {
                 let recipe = hit.recipe;
                 recipe.calories = Math.round(recipe.calories); // Redondea las calorías a enteros

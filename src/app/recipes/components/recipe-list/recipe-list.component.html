@@ -1,6 +1,4 @@
-<h1>Recipes to you!</h1>
-
-
+<app-search (searchQuery)="onSearch($event)"></app-search>
 <div *ngFor="let recipe of dataSource.filteredData">
   <mat-card class="mat-elevation-z8">
     <mat-card-header>
@@ -12,7 +10,7 @@
       <ul>
         <li *ngFor="let ingredient of recipe.ingredientLines">{{ingredient}}</li>
       </ul>
-      <img [src]="recipe.image" alt="{{recipe.label}}" />
+      <img [src]="recipe.image" alt="{{recipe.label}}" class="recipe-image" />
     </mat-card-content>
   </mat-card>
 </div>

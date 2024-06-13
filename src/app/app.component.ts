@@ -4,6 +4,7 @@ import { HeaderContentComponent } from './public/components/header-content/heade
 import {RecipeListComponent} from './recipes/components/recipe-list/recipe-list.component';
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
