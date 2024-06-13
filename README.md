@@ -8,5 +8,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project use the Edamam's RecipeSearchAPI
 
-![image](https://github.com/dars2002/RecipeSearchApi/assets/119977168/de5be816-3794-4cf1-9b2d-e1eb9c4dd95d)
+![image](https://github.com/dars2002/RecipeSearchApi/assets/119977168/153527dd-30d6-4bef-b45f-7a642880d873)
 
