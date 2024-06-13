@@ -26,14 +26,14 @@ export class RecipeListComponent {
       this.searchRecipes(query);
   }
   ngOnInit(): void {
-    this.searchRecipes('chaufa'); // Load default recipes with an empty query
+    this.searchRecipes('');
   }
 
   searchRecipes(query:string): void {
       this.recipesearchApiService.getRecipes(query).subscribe((data: any) => {
         this.recipes = data.hits.map((hit: any) => {
                 let recipe = hit.recipe;
-                recipe.calories = Math.round(recipe.calories); // Redondea las calorías a enteros
+                recipe.calories = Math.round(recipe.calories);
                 return recipe;
               });
         this.dataSource = new MatTableDataSource(this.recipes);

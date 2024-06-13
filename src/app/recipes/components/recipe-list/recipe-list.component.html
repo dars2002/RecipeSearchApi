@@ -3,10 +3,9 @@
   <mat-card class="mat-elevation-z8">
     <mat-card-header>
       <mat-card-title>{{recipe.label}}</mat-card-title>
+      <mat-card-subtitle>Calories: {{recipe.calories}}g</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>Calories: {{recipe.calories}}</p>
-      <p>Ingredients:</p>
       <ul>
         <li *ngFor="let ingredient of recipe.ingredientLines">{{ingredient}}</li>
       </ul>

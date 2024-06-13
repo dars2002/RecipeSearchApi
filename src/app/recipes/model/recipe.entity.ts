@@ -4,8 +4,6 @@ export class Recipe {
   image: string;
   calories: number;
   ingredientLines: string[];
-
-
   constructor() {
     this.id = 0;
     this.label = '';

@@ -1,20 +1,28 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-
-.search-input {
-  padding: 10px !important;
-  font-size: 1.2em !important;
-  border: 1px solid #ccc !important;
-  border-radius: 4px !important;
-}
-
-h1 {
+.title {
   text-align: center;
-  margin: 20px 0;
   font-size: 4em;
   margin: 50px 0;
+   color: #ff7f00;
+}
+.form-inline{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+mat-form-field{
+  width: 100%;
+  max-width: 400px;
+}
+p.subtitle {
+  font-style: italic;
 }
